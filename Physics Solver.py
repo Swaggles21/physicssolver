@@ -161,7 +161,7 @@ def main():
             ad = float(input('Distance value: '))
             avi = float(input('Initial velocity value: '))
             avf = float(input('Final velocity value: '))
-            print('Answer:', (avf ** 2 / d) / 2)
+            print('Answer:', (avf ** 2 / ad) / 2)
         if solve == 'ad' and nouse == 't':
             avf = float(input('Final velocity value: '))
             avi = float(input('Initial velocity value: '))
