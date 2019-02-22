@@ -52,7 +52,6 @@ def main():
             v_i = float(input('Initial velocity value: '))
             a = float(input('Acceleration value: '))
             print('Answer:', ((vf ** 2 - v_i ** 2) / a / 2))
-        # third equation: d = vi*t + .5*a* t^2
         if solve == 'd' and nouse == 'vf':
             t = float(input('Time in seconds: '))
             v_i = float(input('Initial velocity value: '))
@@ -74,9 +73,9 @@ def main():
             var22 = var21 * 2
             print('Answer:', var22 / t)
         if solve == 't' and nouse == 'vf':
-            t = float(input('Time in seconds: '))
             vi = float(input('Initial velocity value: '))
             a = float(input('Acceleration value: '))
+            d = float(input('Distance value: '))
             var25 = .5 * a
             var26 = d / var25
             var27 = var26 ** .5
@@ -155,7 +154,7 @@ def main():
             ad = float(input('Distance value: '))
             avf = float(input('Final velocity value: '))
             aa = float(input('Acceleration value: '))
-            var7 = a * 2 * d - vf ** 2
+            var7 = aa * 2 * ad - avf ** 2
             print('Answer:', -var7 ** .5)
         if solve == 'aa' and nouse == 't':
             ad = float(input('Distance value: '))
@@ -188,13 +187,13 @@ def main():
             var22 = var21 * 2
             print('Answer:', var22 / t)
         if solve == 't' and nouse == 'avf':
-            t = float(input('Time in seconds: '))
             avi = float(input('Initial velocity value: '))
             aa = float(input('Acceleration value: '))
+            ad = float(input('Distance value: '))
             var25 = .5 * aa
             var26 = ad / var25
-            var27 = var26 ** .5
-            print('Answer:', var27)
+            # var27 = var26 ** .5
+            print('Answer:', var26)
         if solve == 'ad' and nouse == 'aa':
             t = float(input('Time in seconds: '))
             avi = float(input('Initial velocity value: '))
@@ -213,7 +212,7 @@ def main():
             t = float(input('Time in seconds: '))
             avi = float(input('Initial velocity value: '))
             ad = float(input('Distance value: '))
-            var23 = 2 * d
+            var23 = 2 * ad
             var24 = var23 / t
             print('Answer:', var24 - avi)
         if solve == 't' and nouse == 'aa':
