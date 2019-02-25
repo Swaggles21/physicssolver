@@ -1,10 +1,11 @@
 # Sebastian Shaffer
 # 2/5/2019
 
+import math
+
 def main():
     equationtype = (input('What type of equations are you solving for?\n '))
     if equationtype.lower() in 'linear':
-        global vi, a, t, vf, d, solve, nouse
         print('Now solving for Linear equations.')
         print('Possible variables are vi / a / t / vf / d.')
         solve = (input('Type the variable you would like to solve for: '))
@@ -113,7 +114,6 @@ def main():
 
     elif equationtype.lower() in 'rotational':
         print('Now solving for Rotational equations')
-        global ad, avi, avf, aa
         print('Note:\n'
               'ad represents Angular Displacement\n'
               'avi represents Initial Angular Velocity\n'
@@ -192,7 +192,6 @@ def main():
             ad = float(input('Distance value: '))
             var25 = .5 * aa
             var26 = ad / var25
-            # var27 = var26 ** .5
             print('Answer:', var26)
         if solve == 'ad' and nouse == 'aa':
             t = float(input('Time in seconds: '))
@@ -224,15 +223,30 @@ def main():
         if nouse == 'avi':
             print('An Initial Velocity is always present, if not stated assume it is 0')
             return main()
-        
+
     elif equationtype.lower() in 'torque':
         print('Now solving for Torque')
-        global A, R, F
         print('Note:\n'
-              'A represents Angle\n'
-              'R represents Radius/Distance\n'
-              'F represents Force\n')
-        
+              'a represents Angle\n'
+              'r represents Radius/Distance\n'
+              'f represents Force\n'
+              't represents Torque\n')
+        solve = (input('What variable are you solving for?\n'))
+        if solve.lower() in 'r':
+            a = float(input('Angel in Degrees: '))
+            f = float(input('Force: '))
+            t = float(input('Torque: '))
+            print('Answer:', (t / f * (math.sin(math.radians(a)))), 'Meters')
+        if solve.lower() in 'f':
+            a = float(input('Angel in Degrees: '))
+            r = float(input('Radius/Distance: '))
+            t = float(input('Torque: '))
+            print('Answer:', (t / r * (math.sin(math.radians(a)))), 'Newtons')
+        if solve.lower() in 't':
+            a = float(input('Angel in Degrees: '))
+            f = float(input('Force: '))
+            r = float(input('Radius/Distance: '))
+            print('Answer:', (r * f * (math.sin(math.radians(a)))), 'Newton/Meters')
     else:
         print('Please enter either rotational, linear or torque!')
         return main()
