@@ -225,15 +225,15 @@ def main():
             print('An Initial Velocity is always present, if not stated assume it is 0')
             return main()
         
-   elif equationtype.lower() in 'torque':
+    elif equationtype.lower() in 'torque':
         print('Now solving for Torque')
-        global a, f, r
+        global A, R, F
         print('Note:\n'
-              'a represents Angle\n'
-              'r represents Radius/Distance\n'
-              'f represents Force\n'
-              
-   else:
+              'A represents Angle\n'
+              'R represents Radius/Distance\n'
+              'F represents Force\n')
+        
+    else:
         print('Please enter either rotational, linear or torque!')
         return main()
 
