@@ -236,17 +236,17 @@ def main():
             a = float(input('Angel in Degrees: '))
             f = float(input('Force: '))
             t = float(input('Torque: '))
-            print('Answer:', (t / f * (math.sin(math.radians(a)))), 'Meters')
+            print('Answer:', (t / f * (math.sin(math.degrees(a)))), 'Meters')
         if solve.lower() in 'f':
             a = float(input('Angel in Degrees: '))
             r = float(input('Radius/Distance: '))
             t = float(input('Torque: '))
-            print('Answer:', (t / r * (math.sin(math.radians(a)))), 'Newtons')
+            print('Answer:', (t / r * (math.sin(math.degrees(a)))), 'Newtons')
         if solve.lower() in 't':
             a = float(input('Angel in Degrees: '))
             f = float(input('Force: '))
             r = float(input('Radius/Distance: '))
-            print('Answer:', (r * f * (math.sin(math.radians(a)))), 'Newton/Meters')
+            print('Answer:', (r * f * (math.sin(math.degrees(a)))), 'Newton/Meters')
     else:
         print('Please enter either rotational, linear or torque!')
         return main()
