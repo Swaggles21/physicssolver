@@ -246,7 +246,7 @@ def main():
             a = float(input('Angel in Degrees: '))
             f = float(input('Force: '))
             r = float(input('Radius/Distance: '))
-            print('Answer:', (r * f * (math.sin(math.radians(a)))), 'Newton/Meters')
+            print('Answer:', (r * f * (math.sin(math.radians(a)))), 'Newton Meters')
             return main()
             
     else:
